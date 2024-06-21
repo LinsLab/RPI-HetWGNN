@@ -23,6 +23,8 @@ def run(args):
     dataset_dir = './data/' + args.dataset + '/'
     model_dir = './model/'
     result_dir = './result/'
+    os.makedirs(model_dir)
+    os.makedirs(result_dir)
     if not os.path.exists(result_dir+args.dataset):
         os.makedirs(result_dir+args.dataset)
     wash_rna_data(os.path.join(dataset_dir, "ncRNA_Sequence.txt"), os.path.join(dataset_dir, "ncRNA_washed.fa"))
